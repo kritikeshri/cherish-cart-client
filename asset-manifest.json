@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/cherish-cart-client/static/css/main.b58ae502.css",
+    "main.js": "/cherish-cart-client/static/js/main.b2ae6062.js",
+    "static/media/carousel_1.png": "/cherish-cart-client/static/media/carousel_1.36bb8854728130c5bb7e.png",
+    "static/media/star.png": "/cherish-cart-client/static/media/star.8199a143596837aeb5b1.png",
+    "static/media/e_logo.png": "/cherish-cart-client/static/media/e_logo.ff18b0bf2637ebf2b444.png",
+    "index.html": "/cherish-cart-client/index.html",
+    "main.b58ae502.css.map": "/cherish-cart-client/static/css/main.b58ae502.css.map",
+    "main.b2ae6062.js.map": "/cherish-cart-client/static/js/main.b2ae6062.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b58ae502.css",
+    "static/js/main.b2ae6062.js"
+  ]
+}
