@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FFFFFF;
+}
+
+/* Code styling */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Navbar styling */
+.navbar {
+  background: linear-gradient(90deg, #FF5733, #C70039); /* Orange to Red gradient */
+  padding: 1em;
+  color: #FFFFFF; /* White text color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for navbar */
+}
+
+.navbar a {
+  color: #FFFFFF; /* White color for links */
+  text-decoration: none;
+  padding: 0.5em 1em;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #900C3F; /* Darker Red on hover */
+  border-radius: 0.5em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Footer styling */
+.footer {
+  background: linear-gradient(90deg, #C70039, #FF5733); /* Red to Orange gradient */
+  color: #FFFFFF;
+  text-align: center;
+  padding: 1.5em 0;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for footer */
+}
+
+/* Background and Text Colors */
+.custom-bg {
+  background-color: #FF5733; /* Orange background */
+}
+
+.text-color {
+  color: #C70039; /* Deep Red text color */
+}
+
+.border-color {
+  border-color: #FF5733; /* Orange border */
+}
+
+.custom-bg-text {
+  color: #FFFFFF; /* White text on colored backgrounds */
+}
+
+/* Background color for sections */
+.bg-color {
+  background-color: #C70039; /* Deep Red background */
+  color: #FFFFFF; /* White text on this background */
+}
+
+/* Rounded card with shadow */
+.rounded-card {
+  padding: 1.5em 0.5em 0.5em;
+  border-radius: 2em;
+  background-color: #FFFFFF;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Form card with deeper shadow */
+.form-card {
+  padding: 1em;
+  border-radius: 1em;
+  background-color: #FF5733; /* Orange background */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adjust shadow intensity */
+}
+
+/* Product card with hover effect */
+.product-card {
+  background-color: #FFFFFF;
+  border-radius: 1em;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Slightly larger on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* Slightly deeper shadow on hover */
+}
+
+/* General Button Styling */
+button {
+  background-color: #C70039; /* Deep Red button background */
+  color: #FFFFFF; /* White text */
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #FF5733; /* Lighter Orange on hover */
+}
+
+/* Adjustments for mobile responsiveness */
+@media (max-width: 768px) {
+  .rounded-card, .form-card, .product-card {
+    padding: 1em;
+    border-radius: 1em;
+  }
+  
+  button {
+    width: 100%;
+    padding: 1em;
+  }
+}
