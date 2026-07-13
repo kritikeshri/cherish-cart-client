@@ -26,8 +26,7 @@ const ViewSellerProducts = () => {
 
   const retrieveAllProducts = async () => {
     const response = await axios.get(
-      "http://localhost:9090/api/product/fetch/seller-wise?sellerId=" +
-        seller.id
+      `${config.apiBaseUrl}/product/fetch/seller-wise?sellerId=${seller.id}`
     );
     console.log(response.data);
     return response.data;
@@ -35,10 +34,7 @@ const ViewSellerProducts = () => {
 
   const deleteProduct = (productId, e) => {
     fetch(
-      "http://localhost:9090/api/product/delete?productId=" +
-        productId +
-        "&sellerId=" +
-        seller.id,
+      `${config.apiBaseUrl}/product/delete?productId=${productId}&sellerId=${seller.id}`,
       {
         method: "DELETE",
         headers: {
@@ -144,8 +140,7 @@ const ViewSellerProducts = () => {
                       <td>
                         <img
                           src={
-                            "http://localhost:9090/api/product/" +
-                            product.image1
+                            `${config.apiBaseUrl}/product/${product.image1}`
                           }
                           class="img-fluid"
                           alt="product_pic"

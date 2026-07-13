@@ -32,7 +32,7 @@ const AddProductReview = () => {
       setUserId(user.id);
       let data = { userId, productId, star, review };
 
-      fetch("http://localhost:9090/api/product/review/add", {
+      fetch(`${config.apiBaseUrl}/product/review/add}`, {
         method: "POST",
         headers: {
           Accept: "application/json",

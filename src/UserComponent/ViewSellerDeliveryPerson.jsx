@@ -25,8 +25,7 @@ const ViewSellerDeliveryPerson = () => {
 
   const retrieveAllUser = async () => {
     const response = await axios.get(
-      "http://localhost:9090/api/user/fetch/seller/delivery-person?sellerId=" +
-        seller.id,
+      `${config.apiBaseUrl}/user/fetch/seller/delivery-person?sellerId=${seller.id}`,
       {
         headers: {
           Authorization: "Bearer " + seller_jwtToken, // Replace with your actual JWT token
@@ -39,8 +38,7 @@ const ViewSellerDeliveryPerson = () => {
 
   const deleteDelivery = (userId, e) => {
     fetch(
-      "http://localhost:9090/api/user/delete/seller/delivery-person?deliveryId=" +
-        userId,
+      `${config.apiBaseUrl}/user/delete/seller/delivery-person?deliveryId=${userId}`,
       {
         method: "DELETE",
         headers: {

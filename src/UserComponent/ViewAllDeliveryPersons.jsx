@@ -19,7 +19,7 @@ const ViewAllDeliveryPersons = () => {
 
   const retrieveAllUser = async () => {
     const response = await axios.get(
-      "http://localhost:9090/api/user/fetch/role-wise?role=Delivery",
+      `${config.apiBaseUrl}/user/fetch/role-wise?role=Delivery`,
       {
         headers: {
           Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token

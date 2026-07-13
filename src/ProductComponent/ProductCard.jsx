@@ -15,7 +15,7 @@ const ProductCard = (product) => {
     <div className="col">
       <div class="card product-card rounded-card custom-bg h-100 shadow-lg">
         <img
-          src={"http://localhost:9090/api/product/" + product.item.image1}
+          src={`${config.apiBaseUrl}/product/${product.item.image1}`}
           class="card-img-top img-fluid rounded"
           alt="img"
           style={{
@@ -47,7 +47,7 @@ const ProductCard = (product) => {
         <div class="card-footer">
           <div className="d-flex justify-content-between mt-2">
             <Link
-              to={`/product/${product.item.id}/category/${product.item.category.id}`}
+              to={`${config.apiBaseUrl}/product/${product.item.id}/category/${product.item.category.id}`}
               className="btn bg-color custom-bg-text"
             >
               Add to Cart

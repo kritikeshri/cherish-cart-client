@@ -28,7 +28,7 @@ const Product = () => {
 
   const retrieveProduct = async () => {
     const response = await axios.get(
-      "http://localhost:9090/api/product/fetch?productId=" + productId
+      `${config.apiBaseUrl}/product/fetch?productId=${productId}`
     );
 
     return response.data;
@@ -54,15 +54,14 @@ const Product = () => {
 
   const retrieveProductsByCategory = async () => {
     const response = await axios.get(
-      "http://localhost:9090/api/product/fetch/category-wise?categoryId=" +
-        categoryId
+      `${config.apiBaseUrl}/product/fetch/category-wise?categoryId=${categoryId}`
     );
     console.log(response.data);
     return response.data;
   };
 
   const saveProductToCart = (userId) => {
-    fetch("http://localhost:9090/api/cart/add", {
+    fetch(`${config.apiBaseUrl}/cart/add`, {
       method: "POST",
       headers: {
         Accept: "application/json",

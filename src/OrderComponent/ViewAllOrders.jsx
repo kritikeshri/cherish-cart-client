@@ -29,7 +29,7 @@ const ViewAllOrders = () => {
 
   const retrieveAllorders = async () => {
     const response = await axios.get(
-      "http://localhost:9090/api/order/fetch/all",
+      `${config.apiBaseUrl}/order/fetch/all`,
       {
         headers: {
           Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -42,7 +42,12 @@ const ViewAllOrders = () => {
 
   const retrieveOrdersById = async () => {
     const response = await axios.get(
-      "http://localhost:9090/api/order/fetch?orderId=" + orderId
+      `${config.apiBaseUrl}/order/fetch?orderId=${orderId}`,
+      {
+        headers: {
+          Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
+        },
+      }
     );
     console.log(response.data);
     return response.data;
@@ -134,8 +139,7 @@ const ViewAllOrders = () => {
                       <td>
                         <img
                           src={
-                            "http://localhost:9090/api/product/" +
-                            order.product.image1
+                            `${config.apiBaseUrl}/product/${order.product.image1}`
                           }
                           class="img-fluid"
                           alt="product_pic"

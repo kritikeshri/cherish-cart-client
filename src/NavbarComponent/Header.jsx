@@ -9,7 +9,7 @@ const Header = () => {
 
   const retrieveAllCategories = async () => {
     const response = await axios.get(
-      "http://localhost:9090/api/categories"
+      `${config.apiBaseUrl}/categories`
     );
     return response.data;
   };

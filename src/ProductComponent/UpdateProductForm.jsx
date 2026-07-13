@@ -19,7 +19,7 @@ const UpdateProductForm = () => {
 
   const retrieveAllCategories = async () => {
     const response = await axios.get(
-      "http://localhost:9090/api/category/fetch/all"
+      `${config.apiBaseUrl}/category/fetch/all`
     );
     return response.data;
   };
@@ -69,7 +69,7 @@ const UpdateProductForm = () => {
       return;
     }
 
-    fetch("http://localhost:9090/api/product/update/detail", {
+    fetch(`${config.apiBaseUrl}/product/update/detail`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -164,7 +164,7 @@ const UpdateProductForm = () => {
     formData.append("id", product.id);
 
     axios
-      .put("http://localhost:9090/api/product/update/image", formData, {
+      .put(`${config.apiBaseUrl}/product/update/image`, formData, {
         headers: {
           Authorization: "Bearer " + seller_jwtToken, // Replace with your actual JWT token
         },

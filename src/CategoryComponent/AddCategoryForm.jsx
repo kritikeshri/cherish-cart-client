@@ -13,7 +13,7 @@ const AddCategoryForm = () => {
   const saveCategory = (e) => {
     let data = { name, description };
 
-    fetch("http://localhost:9090/api/category/add", {
+    fetch(`${config.apiBaseUrl}/category/add`, {
       method: "POST",
       headers: {
         Accept: "application/json",
