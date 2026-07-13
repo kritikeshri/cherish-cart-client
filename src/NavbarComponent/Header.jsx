@@ -38,7 +38,7 @@ const Header = () => {
           />
           <Link to="/" class="navbar-brand">
             <i>
-              <b className="text-color ms-2">E-Tohfa</b>
+              <b className="text-color ms-2">Cherish Cart</b>
             </i>
           </Link>
 

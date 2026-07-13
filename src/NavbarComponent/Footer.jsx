@@ -8,10 +8,10 @@ const Footer = () => {
             <section class="">
               <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase text-color">E-Tohfa</h5>
+                  <h5 class="text-uppercase text-color">Cherish Cart</h5>
 
                   <p>
-                    Welcome to E-Tohfa, your ultimate online gift destination!
+                    Welcome to Cherish Cart, your ultimate online gift destination!
                     Discover a curated collection of unique and thoughtful gifts
                     perfect for any occasion. Shop with us and find something
                     special for your loved ones today!
