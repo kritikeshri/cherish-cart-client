@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import CategoryNavigator from "../CategoryComponent/CategoryNavigator";
+import config from "../config/config";
 
 const ProductCard = (product) => {
   const descriptionToShow = (description, maxLength) => {

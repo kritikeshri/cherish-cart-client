@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import config from "../config/config";
 
 const AddCategoryForm = () => {
   const [name, setName] = useState("");

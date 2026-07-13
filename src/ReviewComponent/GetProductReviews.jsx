@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import config from "../config/config";
 import { useParams } from "react-router-dom";
 import star from "../images/star.png";
 

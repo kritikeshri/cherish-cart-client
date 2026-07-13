@@ -4,6 +4,7 @@ import axios from "axios";
 import ProductCard from "../ProductComponent/ProductCard";
 import Carousel from "./Carousel";
 import Footer from "../NavbarComponent/Footer";
+import config from "../config/config";
 
 const HomePage = () => {
   const { categoryId } = useParams();

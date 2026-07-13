@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import GetProductReviews from "../ReviewComponent/GetProductReviews";
 import ProductCarousel from "./ProductCarousel";
+import config from "../config/config";
 
 const Product = () => {
   const { productId, categoryId } = useParams();

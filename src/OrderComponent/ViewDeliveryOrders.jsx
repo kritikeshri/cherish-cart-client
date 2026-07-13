@@ -3,6 +3,7 @@ import axios from "axios";
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
+import config from "../config/config";
 
 const ViewDeliveryOrders = () => {
   const deliveryPerson = JSON.parse(sessionStorage.getItem("active-delivery"));

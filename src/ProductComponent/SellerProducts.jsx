@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import ProductCard from "../ProductComponent/ProductCard";
 import { useLocation } from "react-router-dom";
+import config from "../config/config";
+
 
 const SellerProducts = () => {
   const location = useLocation();

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import config from "../config/config";
 import { useNavigate } from "react-router-dom";
 
 const UserRegister = () => {

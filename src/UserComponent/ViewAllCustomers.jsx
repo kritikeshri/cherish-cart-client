@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import config from "../config/config";
 import React from "react";
 
 const ViewAllCustomers = () => {

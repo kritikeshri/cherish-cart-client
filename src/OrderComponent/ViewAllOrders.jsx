@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
+import config from "../config/config";
 
 const ViewAllOrders = () => {
   const [orders, setOrders] = useState([]);

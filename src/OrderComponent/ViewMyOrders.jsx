@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
+import config from "../config/config";
+
 const ViewMyOrders = () => {
   let user = JSON.parse(sessionStorage.getItem("active-customer"));
 

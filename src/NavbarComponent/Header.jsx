@@ -3,11 +3,15 @@ import RoleNav from "./RoleNav";
 import logo from "../images/e_logo.png";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import config from "../config/config";
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
 
   const retrieveAllCategories = async () => {
+    console.log(process.env.REACT_APP_REACT_APP_BASE_URL);
+    console.log("Fetching categories...");
+    console.log(config.apiBaseUrl);
     const response = await axios.get(
       `${config.apiBaseUrl}/categories`
     );

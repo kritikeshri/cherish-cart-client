@@ -1,3 +1,5 @@
+import config from "../config/config";
+
 const ProductCarousel = (product) => {
   return (
     <div
