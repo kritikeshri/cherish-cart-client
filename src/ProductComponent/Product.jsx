@@ -62,7 +62,7 @@ const Product = () => {
   };
 
   const saveProductToCart = (userId) => {
-    fetch(`${config.apiBaseUrl}/cart/add`, {
+    fetch(CART_ITEMS_URL, {
       method: "POST",
       headers: {
         Accept: "application/json",

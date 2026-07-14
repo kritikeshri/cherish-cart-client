@@ -1,20 +1,13 @@
 import config from "./config";
 
 const API_BASE_URL = config.apiBaseUrl;
-const CATEGORY_URL = `${API_BASE_URL}/category`;
 const PRODUCT_URL = `${API_BASE_URL}/product`;
 const ORDER_URL = `${API_BASE_URL}/order`;
 const ORDER_ADD_BY_USER_ID = `${ORDER_URL}/add?userId=`;
-const CART_URL = `${API_BASE_URL}/cart`;
 const USER_URL = `${API_BASE_URL}/user`;
 
 const CATEGORIES_URL = `${API_BASE_URL}/categories`;
 const CART_ITEMS_URL = `${API_BASE_URL}/carts/items`;
-
-const CART_FETCH_BY_USER_ID = `${CART_URL}/fetch?userId=`;
-const CART_DELETE = `${CART_URL}/delete`;
-const CART_UPDATE = `${CART_URL}/update`;
-const CART_ADD = `${CART_URL}/add`;
 
 const GET_ALL_ORDERS = `${ORDER_URL}/fetch/all`;
 const GET_ORDER_BY_ID = `${ORDER_URL}/fetch?orderId=`;
@@ -54,10 +47,6 @@ export {
   CART_ITEMS_URL,
   CATEGORY_URL,
   PRODUCT_URL,
-  CART_FETCH_BY_USER_ID,
-  CART_DELETE,
-  CART_UPDATE,
-  CART_ADD,
   GET_ALL_ORDERS,
   GET_ORDER_BY_ID,
   GET_ORDER_BY_USER_ID,

@@ -48,7 +48,7 @@ const ViewMyCart = () => {
 
   const deleteCart = (cartId, e) => {
     const data = { id: cartId, userId: user.id };
-    fetch(`${config.apiBaseUrl}/cart/delete`, {
+    fetch(CART_ITEMS_URL, {
       method: "DELETE",
       headers: {
         Accept: "application/json",
@@ -108,7 +108,7 @@ const ViewMyCart = () => {
 
   const incrementCart = (cart, e) => {
     const data = { id: cart.id, userId: user.id, quantity: cart.quantity + 1 };
-    fetch(`${config.apiBaseUrl}/cart/update`, {
+    fetch(CART_ITEMS_URL, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -168,7 +168,7 @@ const ViewMyCart = () => {
 
   const decrementCart = (cart, e) => {
     const data = { id: cart.id, userId: user.id, quantity: cart.quantity - 1 };
-    fetch(`${config.apiBaseUrl}/cart/update`, {
+    fetch(CART_ITEMS_URL, {
       method: "PUT",
       headers: {
         Accept: "application/json",
