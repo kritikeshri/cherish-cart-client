@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import config from "../config/config";
+
 import React from "react";
 import { PRODUCTS_URL, PRODUCTS_IMAGE_URL } from "../config/constants";
 

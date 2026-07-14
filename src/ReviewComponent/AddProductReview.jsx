@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import config from "../config/config";
+
 import ProductCarousel from "../ProductComponent/ProductCarousel";
 import { useLocation } from "react-router-dom";
 import { PRODUCTS_REVIEW_URL } from "../config/constants";
@@ -26,7 +25,7 @@ const AddProductReview = () => {
   let navigate = useNavigate();
 
   const saveReview = (e) => {
-    if (user == null) {
+    if (user === null) {
       e.preventDefault();
       alert("Please login as Customer for adding your review!!!");
     } else {

@@ -3,7 +3,7 @@ import axios from "axios";
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
-import config from "../config/config";
+
 import { PRODUCTS_IMAGE_URL, SELLERS_URL, GET_DELIVERY_PERSON_BY_SELLER_ID_URL, 
   ORDERS_URL, ORDER_ASSIGN_URL } from "../config/constants";
 

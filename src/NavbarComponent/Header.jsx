@@ -3,7 +3,7 @@ import RoleNav from "./RoleNav";
 import logo from "../images/e_logo.png";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import config from "../config/config";
+
 import { CATEGORIES_URL } from "../config/constants";
 
 const Header = () => {

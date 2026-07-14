@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import GetProductReviews from "../ReviewComponent/GetProductReviews";
 import ProductCarousel from "./ProductCarousel";
-import config from "../config/config";
+
 import { CATEGORIES_URL, PRODUCTS_URL, CART_ITEMS_URL } from "../config/constants";
 
 const Product = () => {

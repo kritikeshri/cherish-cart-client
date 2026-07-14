@@ -3,7 +3,7 @@ import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import config from "../config/config";
+
 import { CATEGORIES_URL } from "../config/constants";
 
 const ViewAllCategories = () => {

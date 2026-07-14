@@ -4,7 +4,7 @@ import axios from "axios";
 import ProductCard from "../ProductComponent/ProductCard";
 import Carousel from "./Carousel";
 import Footer from "../NavbarComponent/Footer";
-import config from "../config/config";
+
 import { CATEGORIES_URL, PRODUCTS_URL } from "../config/constants";
 import { PRODUCTS_SEARCH_URL } from "../config/constants";
 

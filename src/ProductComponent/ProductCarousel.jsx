@@ -1,4 +1,4 @@
-import config from "../config/config";
+
 import { PRODUCTS_IMAGE_URL } from "../config/constants";
 
 const ProductCarousel = (product) => {

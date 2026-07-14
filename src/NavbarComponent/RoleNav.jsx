@@ -11,13 +11,13 @@ const RoleNav = () => {
   const deliveryPerson = JSON.parse(sessionStorage.getItem("active-delivery"));
   const seller = JSON.parse(sessionStorage.getItem("active-seller"));
 
-  if (user != null) {
+  if (user !== null) {
     return <HeaderUser />;
-  } else if (admin != null) {
+  } else if (admin !== null) {
     return <AdminHeader />;
-  } else if (seller != null) {
+  } else if (seller !== null) {
     return <SellerHeader />;
-  } else if (deliveryPerson != null) {
+  } else if (deliveryPerson !== null) {
     return <DeliveryHeader />;
   } else {
     return <NormalHeader />;
