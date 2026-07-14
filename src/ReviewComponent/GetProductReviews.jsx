@@ -4,6 +4,7 @@ import axios from "axios";
 import config from "../config/config";
 import { useParams } from "react-router-dom";
 import star from "../images/star.png";
+import { PRODUCTS_IMAGE_URL, PRODUCTS_URL } from "../config/constants";
 
 const GetProductReviews = (hotel) => {
   const [reviews, setReviews] = useState([]);
@@ -12,9 +13,8 @@ const GetProductReviews = (hotel) => {
   const { productId } = useParams();
 
   const retrieveAllReviews = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/product/review/fetch?productId=${productId}`
-    );
+    const getReviewsByProductIdUrl = `${PRODUCTS_URL}/${productId}/reviews`;
+    const response = await axios.get(getReviewsByProductIdUrl);
     return response.data;
   };
 

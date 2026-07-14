@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
 import config from "../config/config";
+import { PRODUCTS_IMAGE_URL } from "../config/constants";
 
 const ViewMyOrders = () => {
   let user = JSON.parse(sessionStorage.getItem("active-customer"));
@@ -92,7 +93,7 @@ const ViewMyOrders = () => {
                       <td>
                         <img
                           src={
-                            `${config.apiBaseUrl}/product/${order.product.image1}`
+                            `${PRODUCTS_IMAGE_URL}/${order.product.image1}`
                           }
                           class="img-fluid"
                           alt="product_pic"

@@ -4,6 +4,7 @@ import config from "../config/config";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { PRODUCTS_IMAGE_URL } from "../config/constants";
 
 const ViewSellerProducts = () => {
   const seller = JSON.parse(sessionStorage.getItem("active-seller"));
@@ -141,7 +142,7 @@ const ViewSellerProducts = () => {
                       <td>
                         <img
                           src={
-                            `${config.apiBaseUrl}/product/${product.image1}`
+                            `${PRODUCTS_IMAGE_URL}/${product.image1}`
                           }
                           class="img-fluid"
                           alt="product_pic"

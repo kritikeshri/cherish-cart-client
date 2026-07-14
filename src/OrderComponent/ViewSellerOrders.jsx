@@ -4,6 +4,7 @@ import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import config from "../config/config";
+import { PRODUCTS_IMAGE_URL } from "../config/constants";
 
 const ViewSellerOrders = () => {
   const seller = JSON.parse(sessionStorage.getItem("active-seller"));
@@ -249,7 +250,7 @@ const ViewSellerOrders = () => {
                       <td>
                         <img
                           src={
-                            `${config.apiBaseUrl}/product/${order.product.image1}`
+                            `${PRODUCTS_IMAGE_URL}/${order.product.image1}`
                           }
                           class="img-fluid"
                           alt="product_pic"

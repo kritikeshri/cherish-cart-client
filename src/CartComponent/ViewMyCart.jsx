@@ -4,7 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import config from "../config/config";
-import { CART_ITEMS_URL } from "../config/constants";
+import { CART_ITEMS_URL, PRODUCTS_IMAGE_URL } from "../config/constants";
 
 const ViewMyCart = () => {
   let user = JSON.parse(sessionStorage.getItem("active-customer"));
@@ -290,7 +290,7 @@ const ViewMyCart = () => {
                       <td>
                         <img
                           src={
-                            `${config.apiBaseUrl}/product/${cart.product.image1}`
+                            `${PRODUCTS_IMAGE_URL}/${cart.product.image1}`
                           }
                           class="img-fluid"
                           alt="product_pic"

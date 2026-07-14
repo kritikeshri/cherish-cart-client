@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import config from "../config/config";
 import React from "react";
+import { PRODUCTS_URL, PRODUCTS_IMAGE_URL } from "../config/constants";
 
 const ViewAllProducts = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -18,9 +19,7 @@ const ViewAllProducts = () => {
   }, []);
 
   const retrieveAllProducts = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/product/fetch/all`
-    );
+    const response = await axios.get(PRODUCTS_URL);
     console.log(response.data);
     return response.data;
   };
@@ -68,7 +67,7 @@ const ViewAllProducts = () => {
                       <td>
                         <img
                           src={
-                            `${config.apiBaseUrl}/product/${product.image1}`
+                            `${PRODUCTS_IMAGE_URL}/${product.image1}`
                           }
                           class="img-fluid"
                           alt="product_pic"

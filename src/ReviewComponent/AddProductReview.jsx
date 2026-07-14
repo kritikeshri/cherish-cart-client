@@ -6,6 +6,7 @@ import axios from "axios";
 import config from "../config/config";
 import ProductCarousel from "../ProductComponent/ProductCarousel";
 import { useLocation } from "react-router-dom";
+import { PRODUCTS_REVIEW_URL } from "../config/constants";
 
 const AddProductReview = () => {
   let user = JSON.parse(sessionStorage.getItem("active-customer"));
@@ -33,7 +34,7 @@ const AddProductReview = () => {
       setUserId(user.id);
       let data = { userId, productId, star, review };
 
-      fetch(`${config.apiBaseUrl}/product/review/add}`, {
+      fetch(PRODUCTS_REVIEW_URL, {
         method: "POST",
         headers: {
           Accept: "application/json",

@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ProductCarousel from "./ProductCarousel";
+import { CATEGORIES_URL } from "../config/constants";
 
 const UpdateProductForm = () => {
   const location = useLocation();

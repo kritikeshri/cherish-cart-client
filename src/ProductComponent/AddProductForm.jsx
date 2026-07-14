@@ -3,6 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import config from "../config/config";
+import { CATEGORIES_URL } from "../config/constants";
 
 const AddProductForm = () => {
   const [categories, setCategories] = useState([]);
