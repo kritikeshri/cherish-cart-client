@@ -4,6 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import config from "../config/config";
+import { CART_ITEMS_URL } from "../config/constants";
 
 const ViewMyCart = () => {
   let user = JSON.parse(sessionStorage.getItem("active-customer"));
@@ -33,8 +34,8 @@ const ViewMyCart = () => {
   }, []);
 
   const retrieveCart = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/cart/fetch?userId=${user.id}`,
+    const url = `${CART_ITEMS_URL}?userId=${user.id}`;
+    const response = await axios.get(url,
       {
         headers: {
           Authorization: "Bearer " + customer_jwtToken, // Replace with your actual JWT token

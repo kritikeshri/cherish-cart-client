@@ -5,6 +5,7 @@ import ProductCard from "../ProductComponent/ProductCard";
 import Carousel from "./Carousel";
 import Footer from "../NavbarComponent/Footer";
 import config from "../config/config";
+import { CATEGORIES_URL } from "../config/constants";
 
 const HomePage = () => {
   const { categoryId } = useParams();
@@ -29,9 +30,8 @@ const HomePage = () => {
           );
         } else {
           // Fetch products by category
-          response = await axios.get(
-            `${config.apiBaseUrl}/product/fetch/category-wise?categoryId=${categoryId}`
-          );
+          const getProductsByCategoryUrl = `${CATEGORIES_URL}/${categoryId}/products`;
+          response = await axios.get(getProductsByCategoryUrl);
         }
         if (response.data) {
           setProducts(response.data.products);

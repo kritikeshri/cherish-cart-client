@@ -18,10 +18,9 @@ const UpdateProductForm = () => {
 
   let navigate = useNavigate();
 
+  // Need to make common function
   const retrieveAllCategories = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/category/fetch/all`
-    );
+    const response = await axios.get(CATEGORIES_URL);
     return response.data;
   };
 

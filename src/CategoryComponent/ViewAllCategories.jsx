@@ -4,6 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import config from "../config/config";
+import { CATEGORIES_URL } from "../config/constants";
 
 const ViewAllCategories = () => {
   const [allCategories, setAllCategories] = useState([]);
@@ -22,21 +23,18 @@ const ViewAllCategories = () => {
 
     getAllCategory();
   }, []);
-
+  // Need to make common function
   const retrieveAllCategory = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/category/fetch/all`
-    );
+    const response = await axios.get(CATEGORIES_URL);
     console.log(response.data);
     return response.data;
   };
 
   const deleteCategory = (categoryId, e) => {
-    fetch(
-      `${config.apiBaseUrl}/category/delete?categoryId=${categoryId}`,
-      {
-        method: "DELETE",
-        headers: {
+    const url = `${CATEGORIES_URL}/${categoryId}`;
+    fetch(url, {
+      method: "DELETE",
+      headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
           Authorization: "Bearer " + admin_jwtToken,

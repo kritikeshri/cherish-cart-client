@@ -7,6 +7,7 @@ import ProductCard from "./ProductCard";
 import GetProductReviews from "../ReviewComponent/GetProductReviews";
 import ProductCarousel from "./ProductCarousel";
 import config from "../config/config";
+import { CATEGORIES_URL } from "../config/constants";
 
 const Product = () => {
   const { productId, categoryId } = useParams();
@@ -54,9 +55,8 @@ const Product = () => {
   }, [productId]);
 
   const retrieveProductsByCategory = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/product/fetch/category-wise?categoryId=${categoryId}`
-    );
+    const getProductsByCategoryUrl = `${CATEGORIES_URL}/${categoryId}/products`;
+    const response = await axios.get(getProductsByCategoryUrl);
     console.log(response.data);
     return response.data;
   };

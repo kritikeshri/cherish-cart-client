@@ -25,9 +25,8 @@ const SellerProducts = () => {
           );
         } else {
           // Fetch products by category
-          response = await axios.get(
-            `${config.apiBaseUrl}/product/fetch/seller-wise/category-wise?sellerId=${seller.id}&categoryId=${categoryId}`
-          );
+          const getProductsByCategoryUrl = `${CATEGORIES_URL}/${categoryId}/products`;
+          response = await axios.get(getProductsByCategoryUrl);
         }
         if (response.data) {
           setProducts(response.data.products);

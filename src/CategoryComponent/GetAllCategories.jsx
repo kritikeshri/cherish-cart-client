@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { CATEGORIES_URL } from "../config/constants";
 
 const GetAllCategories = () => {
   const [categories, setCategories] = useState([]);
-
+  // Need to make common function
   const retrieveAllCategories = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/categories`
-    );
+    const response = await axios.get(CATEGORIES_URL);
     return response.data;
   };
 

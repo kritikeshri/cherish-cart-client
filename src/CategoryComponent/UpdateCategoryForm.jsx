@@ -17,8 +17,8 @@ const UpdateCategoryForm = () => {
 
   const saveCategory = (e) => {
     let data = { id, name, description };
-
-    fetch(`${config.apiBaseUrl}/category/update`, {
+    const url = `${CATEGORIES_URL}/${id}`;
+    fetch(url, {
       method: "PUT",
       headers: {
         Accept: "application/json",
