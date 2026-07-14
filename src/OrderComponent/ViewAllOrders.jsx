@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
-import config from "../config/config";
 import { PRODUCTS_IMAGE_URL } from "../config/constants";
+import { ORDERS_URL } from "../config/constants";
 
 const ViewAllOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -30,8 +30,7 @@ const ViewAllOrders = () => {
   }, [orderId]);
 
   const retrieveAllorders = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/order/fetch/all`,
+    const response = await axios.get(ORDERS_URL,
       {
         headers: {
           Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
@@ -43,8 +42,9 @@ const ViewAllOrders = () => {
   };
 
   const retrieveOrdersById = async () => {
+    const getOrderByOrderIdUrl = `${ORDERS_URL}/${orderId}`;
     const response = await axios.get(
-      `${config.apiBaseUrl}/order/fetch?orderId=${orderId}`,
+      getOrderByOrderIdUrl,
       {
         headers: {
           Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token

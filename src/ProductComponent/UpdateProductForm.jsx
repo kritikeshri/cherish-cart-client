@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import config from "../config/config";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";

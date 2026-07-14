@@ -3,8 +3,8 @@ import axios from "axios";
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
-import config from "../config/config";
-import { PRODUCTS_IMAGE_URL } from "../config/constants";
+import { PRODUCTS_IMAGE_URL, DELIVERY_PERSON_URL, GET_ALL_DELIVER_STATUSES_URL,
+  GET_ALL_DELIVER_TIMES_URL, ORDERS_URL, ORDER_STATUS_URL} from "../config/constants";
 
 const ViewDeliveryOrders = () => {
   const deliveryPerson = JSON.parse(sessionStorage.getItem("active-delivery"));
@@ -75,8 +75,9 @@ const ViewDeliveryOrders = () => {
   }, [orderId]);
 
   const retrieveAllorders = async () => {
+    const getOrdersByDeliveryPersonIdUrl = `${DELIVERY_PERSON_URL}/${deliveryPerson.id}/orders`;
     const response = await axios.get(
-      `${config.apiBaseUrl}/order/fetch/delivery-wise?deliveryPersonId=${deliveryPerson.id}`,
+      getOrdersByDeliveryPersonIdUrl,
       {
         headers: {
           Authorization: "Bearer " + delivery_jwtToken, // Replace with your actual JWT token
@@ -88,25 +89,20 @@ const ViewDeliveryOrders = () => {
   };
 
   const retrieveAllDeliveryStatus = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/order/fetch/delivery-status/all`
-    );
+    const response = await axios.get(GET_ALL_DELIVER_STATUSES_URL);
     console.log(response.data);
     return response.data;
   };
 
   const retrieveAllDeliveryTiming = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/order/fetch/delivery-time/all`
-    );
+    const response = await axios.get(GET_ALL_DELIVER_TIMES_URL);
     console.log(response.data);
     return response.data;
   };
 
   const retrieveOrdersById = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/order/fetch?orderId=${orderId}`
-    );
+    const getOrderByOrderId = `${ORDERS_URL}/${orderId}`;
+    const response = await axios.get(getOrderByOrderId);
     console.log(response.data);
     return response.data;
   };
@@ -131,7 +127,7 @@ const ViewDeliveryOrders = () => {
   const updateOrderStatus = (orderId, e) => {
     deliveryUpdateRequest.orderId = assignOrderId;
 
-    fetch(`${config.apiBaseUrl}/order/update/delivery-status`, {
+    fetch(ORDER_STATUS_URL, {
       method: "PUT",
       headers: {
         Accept: "application/json",

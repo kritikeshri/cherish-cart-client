@@ -3,6 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import config from "../config/config";
 import { useNavigate } from "react-router-dom";
+import { USERS_REGISTER_URL } from "../config/constants";
 
 const UserRegister = () => {
   const navigate = useNavigate();
@@ -45,7 +46,7 @@ const UserRegister = () => {
       // jwtToken = sessionStorage.getItem("seller-jwtToken"); // Use bank's JWT token for customer register
     }
 
-    fetch(`${config.apiBaseUrl}/user/register}`, {
+    fetch(USERS_REGISTER_URL, {
       method: "POST",
       headers: {
         Accept: "application/json",

@@ -4,7 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import config from "../config/config";
-import { CART_ITEMS_URL, PRODUCTS_IMAGE_URL } from "../config/constants";
+import { CART_ITEMS_URL, PRODUCTS_IMAGE_URL, USERS_URL } from "../config/constants";
 
 const ViewMyCart = () => {
   let user = JSON.parse(sessionStorage.getItem("active-customer"));

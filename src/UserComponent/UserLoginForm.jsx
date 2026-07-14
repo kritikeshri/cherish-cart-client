@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import config from "../config/config";
 import { useNavigate } from "react-router-dom";
+import { USERS_LOGIN_URL } from "../config/constants";
 
 const UserLoginForm = () => {
   let navigate = useNavigate();
@@ -18,7 +19,7 @@ const UserLoginForm = () => {
   };
 
   const loginAction = (e) => {
-    fetch(`${config.apiBaseUrl}/user/login}`, {
+    fetch(USERS_LOGIN_URL, {
       method: "POST",
       headers: {
         Accept: "application/json",

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import CategoryNavigator from "../CategoryComponent/CategoryNavigator";
-import config from "../config/config";
 import { PRODUCTS_IMAGE_URL } from "../config/constants";
 
 const ProductCard = (product) => {

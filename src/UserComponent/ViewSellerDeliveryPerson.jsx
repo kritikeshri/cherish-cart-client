@@ -4,6 +4,7 @@ import config from "../config/config";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { GET_DELIVERY_PERSON_BY_SELLER_ID_URL, DELETE_DELIVERY_PERSON_BY_DELIVERY_ID_URL } from "../config/constants";
 
 const ViewSellerDeliveryPerson = () => {
   const [allDelivery, setAllDelivery] = useState([]);
@@ -25,8 +26,7 @@ const ViewSellerDeliveryPerson = () => {
   }, []);
 
   const retrieveAllUser = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/user/fetch/seller/delivery-person?sellerId=${seller.id}`,
+    const response = await axios.get(GET_DELIVERY_PERSON_BY_SELLER_ID_URL,
       {
         headers: {
           Authorization: "Bearer " + seller_jwtToken, // Replace with your actual JWT token
@@ -38,8 +38,7 @@ const ViewSellerDeliveryPerson = () => {
   };
 
   const deleteDelivery = (userId, e) => {
-    fetch(
-      `${config.apiBaseUrl}/user/delete/seller/delivery-person?deliveryId=${userId}`,
+    fetch(DELETE_DELIVERY_PERSON_BY_DELIVERY_ID_URL + `?deliveryId=${userId}`,
       {
         method: "DELETE",
         headers: {

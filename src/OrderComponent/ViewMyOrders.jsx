@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
 import config from "../config/config";
-import { PRODUCTS_IMAGE_URL } from "../config/constants";
+import { PRODUCTS_IMAGE_URL,USERS_URL } from "../config/constants";
 
 const ViewMyOrders = () => {
   let user = JSON.parse(sessionStorage.getItem("active-customer"));
@@ -23,8 +23,9 @@ const ViewMyOrders = () => {
   }, []);
 
   const retrieveCart = async () => {
+    const getOrdersByUserIdUrl = `${USERS_URL}/${user.id}/orders`;
     const response = await axios.get(
-      `${config.apiBaseUrl}/order/fetch/user-wise?userId=${user.id}`,
+      getOrdersByUserIdUrl,
       {
         headers: {
           Authorization: "Bearer " + customer_jwtToken, // Replace with your actual JWT token

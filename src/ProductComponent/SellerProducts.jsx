@@ -3,14 +3,13 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import ProductCard from "../ProductComponent/ProductCard";
 import { useLocation } from "react-router-dom";
-import config from "../config/config";
 import { CATEGORIES_URL, SELLERS_URL } from "../config/constants";
 
 const SellerProducts = () => {
   const location = useLocation();
   const seller = location.state;
 
-  const { categoryId, categoryName, sellerName } = useParams();
+  const { categoryId, sellerName } = useParams();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {

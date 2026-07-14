@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import config from "../config/config";
+import { ORDERS_URL } from "../config/constants";
 
 const AddCardDetails = () => {
   const location = useLocation();
@@ -25,7 +26,7 @@ const AddCardDetails = () => {
 
   const payForOrder = (e) => {
     e.preventDefault();
-    fetch(`${config.apiBaseUrl}/order/add?userId=${user.id}`, {
+    fetch(ORDERS_URL, {
       method: "POST",
       headers: {
         Accept: "application/json",

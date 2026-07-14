@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import config from "../config/config";
 import React from "react";
+import { USERS_URL } from "../config/constants";
 
 const ViewAllCustomers = () => {
   const [allCustomer, setAllCustomer] = useState([]);
@@ -20,8 +20,8 @@ const ViewAllCustomers = () => {
   }, []);
 
   const retrieveAllUser = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/user/fetch/role-wise?role=Customer`,
+    const getUserByRoleUrl = `${USERS_URL}?role=Customer`;
+    const response = await axios.get(getUserByRoleUrl,
       {
         headers: {
           Authorization: "Bearer " + admin_jwtToken, // Replace with your actual JWT token
