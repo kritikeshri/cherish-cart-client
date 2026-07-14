@@ -49,7 +49,7 @@ const ProductCard = (product) => {
         <div class="card-footer">
           <div className="d-flex justify-content-between mt-2">
             <Link
-              to={`${config.apiBaseUrl}/product/${product.item.id}/category/${product.item.category.id}`}
+              to={`/product/${product.item.id}/category/${product.item.category.id}`}
               className="btn bg-color custom-bg-text"
             >
               Add to Cart
