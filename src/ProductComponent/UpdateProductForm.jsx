@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ProductCarousel from "./ProductCarousel";
-import { CATEGORIES_URL } from "../config/constants";
+import { CATEGORIES_URL, PRODUCTS_IMAGE_URL, PRODUCTS_URL } from "../config/constants";
 
 const UpdateProductForm = () => {
   const location = useLocation();
@@ -69,8 +69,8 @@ const UpdateProductForm = () => {
 
       return;
     }
-
-    fetch(`${config.apiBaseUrl}/product/update/detail`, {
+    const updateProductUrl = `${PRODUCTS_URL}/${updatedProduct.id}`;
+    fetch(updateProductUrl, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -165,7 +165,7 @@ const UpdateProductForm = () => {
     formData.append("id", product.id);
 
     axios
-      .put(`${config.apiBaseUrl}/product/update/image`, formData, {
+      .put(PRODUCTS_IMAGE_URL, formData, {
         headers: {
           Authorization: "Bearer " + seller_jwtToken, // Replace with your actual JWT token
         },

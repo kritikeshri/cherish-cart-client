@@ -4,7 +4,7 @@ import config from "../config/config";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { PRODUCTS_IMAGE_URL } from "../config/constants";
+import { PRODUCTS_URL, PRODUCTS_IMAGE_URL, SELLERS_URL } from "../config/constants";
 
 const ViewSellerProducts = () => {
   const seller = JSON.parse(sessionStorage.getItem("active-seller"));
@@ -27,16 +27,16 @@ const ViewSellerProducts = () => {
   }, []);
 
   const retrieveAllProducts = async () => {
-    const response = await axios.get(
-      `${config.apiBaseUrl}/product/fetch/seller-wise?sellerId=${seller.id}`
-    );
+    const getProductsBySellerIdUrl = `${SELLERS_URL}/${seller.id}/products`;
+    const response = await axios.get(getProductsBySellerIdUrl);
     console.log(response.data);
     return response.data;
   };
 
   const deleteProduct = (productId, e) => {
+    const updateProductUrl = `${PRODUCTS_URL}/${productId}`;
     fetch(
-      `${config.apiBaseUrl}/product/delete?productId=${productId}&sellerId=${seller.id}`,
+      updateProductUrl,
       {
         method: "DELETE",
         headers: {

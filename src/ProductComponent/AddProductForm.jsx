@@ -3,7 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import config from "../config/config";
-import { CATEGORIES_URL } from "../config/constants";
+import { CATEGORIES_URL, PRODUCTS_URL } from "../config/constants";
 
 const AddProductForm = () => {
   const [categories, setCategories] = useState([]);
@@ -75,7 +75,7 @@ const AddProductForm = () => {
     formData.append("sellerId", seller.id);
 
     axios
-      .post(`${config.apiBaseUrl}/product/add`, formData, {
+      .post(PRODUCTS_URL, formData, {
         headers: {
           Authorization: "Bearer " + seller_jwtToken, // Replace with your actual JWT token
         },

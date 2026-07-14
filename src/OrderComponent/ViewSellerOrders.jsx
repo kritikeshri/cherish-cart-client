@@ -4,7 +4,7 @@ import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import config from "../config/config";
-import { PRODUCTS_IMAGE_URL } from "../config/constants";
+import { PRODUCTS_IMAGE_URL, SELLERS_URL, GET_DELIVERY_PERSON_BY_SELLER_ID_URL } from "../config/constants";
 
 const ViewSellerOrders = () => {
   const seller = JSON.parse(sessionStorage.getItem("active-seller"));
@@ -51,8 +51,9 @@ const ViewSellerOrders = () => {
   }, [orderId]);
 
   const retrieveAllorders = async () => {
+    const getOrdersBySellerIdUrl = `${SELLERS_URL}/${seller.id}/orders`;
     const response = await axios.get(
-      `${config.apiBaseUrl}/order/fetch/seller-wise?sellerId=${seller.id}`,
+      getOrdersBySellerIdUrl,
       {
         headers: {
           Authorization: "Bearer " + seller_jwtToken, // Replace with your actual JWT token
@@ -65,7 +66,7 @@ const ViewSellerOrders = () => {
 
   const retrieveAllUser = async () => {
     const response = await axios.get(
-      `${config.apiBaseUrl}/user/fetch/seller/delivery-person?sellerId=${seller.id}`,
+      `${GET_DELIVERY_PERSON_BY_SELLER_ID_URL}=${seller.id}`,
       {
         headers: {
           Authorization: "Bearer " + seller_jwtToken, // Replace with your actual JWT token

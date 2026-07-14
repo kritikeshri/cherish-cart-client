@@ -4,7 +4,7 @@ import axios from "axios";
 import ProductCard from "../ProductComponent/ProductCard";
 import { useLocation } from "react-router-dom";
 import config from "../config/config";
-import { CATEGORIES_URL } from "../config/constants";
+import { CATEGORIES_URL, SELLERS_URL } from "../config/constants";
 
 const SellerProducts = () => {
   const location = useLocation();
@@ -19,10 +19,9 @@ const SellerProducts = () => {
         let response;
 
         if (categoryId == null) {
-          // Fetch all products
-          response = await axios.get(
-            `${config.apiBaseUrl}/product/fetch/seller-wise?sellerId=${seller.id}`
-          );
+          // Fetch all products for the seller
+          const getProductsBySellerIdUrl = `${SELLERS_URL}/${seller.id}/products`;
+          response = await axios.get(getProductsBySellerIdUrl);
         } else {
           // Fetch products by category
           const getProductsByCategoryUrl = `${CATEGORIES_URL}/${categoryId}/products`;
