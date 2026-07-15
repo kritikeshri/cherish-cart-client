@@ -23,17 +23,21 @@ const ViewMyOrders = () => {
   }, []);
 
   const retrieveCart = async () => {
-    const getOrdersByUserIdUrl = `${USERS_URL}/${user.id}/orders`;
-    const response = await axios.get(
-      getOrdersByUserIdUrl,
-      {
-        headers: {
-          Authorization: "Bearer " + customer_jwtToken, // Replace with your actual JWT token
-        },
-      }
-    );
-    console.log(response.data);
-    return response.data;
+    if(user?.id){
+      const getOrdersByUserIdUrl = `${USERS_URL}/${user.id}/orders`;
+      const response = await axios.get(
+        getOrdersByUserIdUrl,
+        {
+          headers: {
+            Authorization: "Bearer " + customer_jwtToken, // Replace with your actual JWT token
+          },
+        }
+      );
+      console.log(response.data);
+      return response.data;
+    }else {
+      return null;
+    }
   };
 
   const formatDateFromEpoch = (epochTime) => {
