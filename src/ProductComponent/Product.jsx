@@ -269,7 +269,7 @@ const Product = () => {
           </div>
         </div>
 
-        <div class="col-sm-3 mt-2 admin">
+        <div className="col-sm-3 mt-2 admin">
           <GetProductReviews />
         </div>
       </div>
@@ -279,7 +279,7 @@ const Product = () => {
           <h2>Related Products:</h2>
           <div className="row row-cols-1 row-cols-md-4 g-4">
             {products.map((product) => {
-              return <ProductCard item={product} />;
+              return <ProductCard key={product.id} item={product} />;
             })}
           </div>
         </div>
