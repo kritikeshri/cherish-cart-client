@@ -3,7 +3,7 @@ import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import { reloadWithTimeout } from "../utils/utils";
 import { CART_ITEMS_URL, PRODUCTS_IMAGE_URL, USERS_URL } from "../config/constants";
 
 const ViewMyCart = () => {
@@ -100,9 +100,7 @@ const ViewMyCart = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000); // Redirect after 3 seconds
+        reloadWithTimeout(1000);
       });
   };
 
@@ -160,9 +158,7 @@ const ViewMyCart = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000); // Redirect after 3 seconds
+        reloadWithTimeout(1000);
       });
   };
 
@@ -220,9 +216,7 @@ const ViewMyCart = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000); // Redirect after 3 seconds
+        reloadWithTimeout(1000);
       });
   };
 

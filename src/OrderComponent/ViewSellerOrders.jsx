@@ -3,9 +3,9 @@ import axios from "axios";
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
-
+import { reloadWithTimeout } from "../utils/utils";
 import { PRODUCTS_IMAGE_URL, SELLERS_URL, GET_DELIVERY_PERSON_BY_SELLER_ID_URL, 
-  ORDERS_URL, ORDER_ASSIGN_URL } from "../config/constants";
+  ORDERS_URL, ORDER_ASSIGN_URL } from "../config/constants";  
 
 const ViewSellerOrders = () => {
   const seller = JSON.parse(sessionStorage.getItem("active-seller"));
@@ -134,9 +134,7 @@ const ViewSellerOrders = () => {
               progress: undefined,
             });
             setOrders(res.orders);
-            setTimeout(() => {
-              window.location.reload(true);
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           } else if (!res.success) {
             toast.error(res.responseMessage, {
               position: "top-center",
@@ -147,9 +145,7 @@ const ViewSellerOrders = () => {
               draggable: true,
               progress: undefined,
             });
-            setTimeout(() => {
-              window.location.reload(true);
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           } else {
             toast.error("It Seems Server is down!!!", {
               position: "top-center",
@@ -160,9 +156,7 @@ const ViewSellerOrders = () => {
               draggable: true,
               progress: undefined,
             });
-            setTimeout(() => {
-              window.location.reload(true);
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           }
         });
       })
@@ -177,9 +171,7 @@ const ViewSellerOrders = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000); // Redirect after 3 seconds
+        reloadWithTimeout(2000);
       });
   };
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-
+import { reloadWithTimeout } from "../utils/utils";
 import { ORDERS_URL } from "../config/constants";
 
 const AddCardDetails = () => {
@@ -60,9 +60,7 @@ const AddCardDetails = () => {
               draggable: true,
               progress: undefined,
             });
-            setTimeout(() => {
-              window.location.reload(true);
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           } else {
             toast.error("It Seems Server is down!!!", {
               position: "top-center",
@@ -73,9 +71,7 @@ const AddCardDetails = () => {
               draggable: true,
               progress: undefined,
             });
-            setTimeout(() => {
-              window.location.reload(true);
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           }
         });
       })
@@ -90,9 +86,7 @@ const AddCardDetails = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000); // Redirect after 3 seconds
+        reloadWithTimeout(1000);
       });
   };
 

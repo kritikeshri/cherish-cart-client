@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-
+import { reloadWithTimeout } from "../utils/utils"; 
 import { useNavigate } from "react-router-dom";
 import { USERS_REGISTER_URL } from "../config/constants";
 
@@ -116,9 +116,7 @@ const UserRegister = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000); // Redirect after 3 seconds
+        reloadWithTimeout(1000);
       });
     e.preventDefault();
   };

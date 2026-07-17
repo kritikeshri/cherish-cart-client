@@ -3,7 +3,7 @@ import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import { reloadWithTimeout } from "../utils/utils";
 import { CATEGORIES_URL } from "../config/constants";
 
 const ViewAllCategories = () => {
@@ -84,9 +84,7 @@ const ViewAllCategories = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000); // Redirect after 3 seconds
+        reloadWithTimeout(1000);
       });
   };
 

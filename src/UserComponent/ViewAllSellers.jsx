@@ -5,6 +5,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { USERS_URL, DELETE_SELLER_BY_SELLER_ID_URL } from "../config/constants";
+import { reloadWithTimeout } from "../utils/utils"; 
 
 const ViewAllSellers = () => {
   const [allSeller, setAllSeller] = useState([]);
@@ -91,9 +92,7 @@ const ViewAllSellers = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000); // Redirect after 3 seconds
+        reloadWithTimeout(1000);
       });
   };
 

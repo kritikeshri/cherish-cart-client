@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import { reloadWithTimeout } from "../utils/utils";
 import { CATEGORIES_URL } from "../config/constants";
 
 const AddCategoryForm = () => {
@@ -50,9 +50,7 @@ const AddCategoryForm = () => {
               draggable: true,
               progress: undefined,
             });
-            setTimeout(() => {
-              window.location.reload(true);
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           } else {
             toast.error("It Seems Server is down!!!", {
               position: "top-center",
@@ -63,9 +61,7 @@ const AddCategoryForm = () => {
               draggable: true,
               progress: undefined,
             });
-            setTimeout(() => {
-              window.location.reload(true);
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           }
         });
       })
@@ -80,9 +76,7 @@ const AddCategoryForm = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000); // Redirect after 3 seconds
+        reloadWithTimeout(1000);
       });
     e.preventDefault();
   };

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
+import { reloadWithTimeout } from "../utils/utils";
 import { ToastContainer, toast } from "react-toastify";
 import { PRODUCTS_IMAGE_URL, DELIVERY_PERSON_URL, GET_ALL_DELIVER_STATUSES_URL,
   GET_ALL_DELIVER_TIMES_URL, ORDERS_URL, ORDER_STATUS_URL} from "../config/constants";
@@ -149,9 +150,7 @@ const ViewDeliveryOrders = () => {
               progress: undefined,
             });
 
-            setTimeout(() => {
-              window.location.reload(true);
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           } else if (!res.success) {
             toast.error(res.responseMessage, {
               position: "top-center",
@@ -162,9 +161,7 @@ const ViewDeliveryOrders = () => {
               draggable: true,
               progress: undefined,
             });
-            setTimeout(() => {
-              window.location.reload(true);
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           } else {
             toast.error("It Seems Server is down!!!", {
               position: "top-center",
@@ -175,9 +172,7 @@ const ViewDeliveryOrders = () => {
               draggable: true,
               progress: undefined,
             });
-            setTimeout(() => {
-              window.location.reload(true);
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           }
         });
       })
@@ -192,9 +187,7 @@ const ViewDeliveryOrders = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000); // Redirect after 3 seconds
+        reloadWithTimeout(1000);
       });
   };
 

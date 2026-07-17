@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
+import { reloadWithTimeout } from "../utils/utils"; 
 import ProductCarousel from "../ProductComponent/ProductCarousel";
 import { useLocation } from "react-router-dom";
 import { PRODUCTS_REVIEW_URL } from "../config/constants";
@@ -69,9 +69,7 @@ const AddProductReview = () => {
               draggable: true,
               progress: undefined,
             });
-            setTimeout(() => {
-              window.location.reload(true);
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           } else {
             toast.error("It Seems Server is down!!!", {
               position: "top-center",
@@ -82,9 +80,7 @@ const AddProductReview = () => {
               draggable: true,
               progress: undefined,
             });
-            setTimeout(() => {
-              window.location.reload(true);
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           }
         });
       });

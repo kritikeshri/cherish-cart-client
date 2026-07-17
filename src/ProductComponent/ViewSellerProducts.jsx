@@ -3,6 +3,7 @@ import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { reloadWithTimeout } from "../utils/utils";
 import { PRODUCTS_URL, PRODUCTS_IMAGE_URL, SELLERS_URL } from "../config/constants";
 
 const ViewSellerProducts = () => {
@@ -88,9 +89,7 @@ const ViewSellerProducts = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000); // Redirect after 3 seconds
+        reloadWithTimeout(1000);
       });
   };
 

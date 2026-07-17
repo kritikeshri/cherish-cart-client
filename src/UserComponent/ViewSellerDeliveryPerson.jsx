@@ -5,6 +5,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { GET_DELIVERY_PERSON_BY_SELLER_ID_URL, DELETE_DELIVERY_PERSON_BY_DELIVERY_ID_URL } from "../config/constants";
+import { reloadWithTimeout } from "../utils/utils"; 
 
 const ViewSellerDeliveryPerson = () => {
   const [allDelivery, setAllDelivery] = useState([]);
@@ -91,9 +92,7 @@ const ViewSellerDeliveryPerson = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000); // Redirect after 3 seconds
+        reloadWithTimeout(1000);
       });
   };
 
