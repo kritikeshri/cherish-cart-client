@@ -18,6 +18,12 @@ const AddProductForm = () => {
     return response.data;
   };
 
+  const reloadWithTimeout = (timeout) => {
+    setTimeout(() => {
+          window.location.reload(true);
+        }, timeout);
+    }
+
   useEffect(() => {
     const getAllCategories = async () => {
       const resCategory = await retrieveAllCategories();
@@ -106,9 +112,7 @@ const AddProductForm = () => {
             draggable: true,
             progress: undefined,
           });
-          setTimeout(() => {
-            window.location.reload(true);
-          }, 2000); // Redirect after 3 seconds
+          reloadWithTimeout(2000);
         } else {
           toast.error("It Seems Server is down!!!", {
             position: "top-center",
@@ -119,9 +123,7 @@ const AddProductForm = () => {
             draggable: true,
             progress: undefined,
           });
-          setTimeout(() => {
-            window.location.reload(true);
-          }, 2000); // Redirect after 3 seconds
+          reloadWithTimeout(2000);
         }
       })
       .catch((error) => {
@@ -135,9 +137,7 @@ const AddProductForm = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 2000); // Redirect after 3 seconds
+        reloadWithTimeout(2000);
       });
   };
 
