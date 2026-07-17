@@ -157,7 +157,7 @@ const ViewSellerProducts = () => {
                         <b>{product.description}</b>
                       </td>
                       <td>
-                        <b>{product.category.name}</b>
+                        <b>{product.category?.name}</b>
                       </td>
                       <td>
                         <b>{product.quantity}</b>

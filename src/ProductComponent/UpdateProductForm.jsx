@@ -45,7 +45,7 @@ const UpdateProductForm = () => {
     description: product.description,
     price: product.price,
     quantity: product.quantity,
-    categoryId: product.categoryId,
+    categoryId: product.category.id,
     sellerId: product.sellerId,
   });
 
@@ -293,14 +293,14 @@ const UpdateProductForm = () => {
 
                     <select
                       name="categoryId"
+                      value={updatedProduct.categoryId}
                       onChange={handleInput}
                       className="form-control"
                     >
-                      <option value="">Select Category</option>
 
                       {categories.map((category) => {
                         return (
-                          <option value={category.id}> {category.name} </option>
+                          <option key={category.id} value={category.id}> {category.name} </option>
                         );
                       })}
                     </select>
