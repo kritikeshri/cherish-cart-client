@@ -19,7 +19,7 @@ const ORDER_STATUS_URL = `${API_BASE_URL}/order/status`;
 const DELIVERY_PERSON_URL = `${API_BASE_URL}/delivery-persons`;
 
 //Recheck these APIs
-const GET_DELIVERY_PERSON_BY_SELLER_ID_URL = `${API_BASE_URL}/api/user/fetch/seller/delivery-person?sellerId`;
+const GET_DELIVERY_PERSON_BY_SELLER_ID_URL = `${API_BASE_URL}/user/fetch/seller/delivery-person?sellerId`;
 const GET_ALL_DELIVER_STATUSES_URL = `${API_BASE_URL}/order/delivery-statuses`;
 const GET_ALL_DELIVER_TIMES_URL = `${API_BASE_URL}/order/delivery-times`;
 const REGISTER_USER_ADMIN_URL = `${API_BASE_URL}/user/admin/add`;

@@ -20,7 +20,7 @@ const ViewAllDeliveryPersons = () => {
   }, []);
 
   const retrieveAllUser = async () => {
-    const getUserByRoleUrl = `${USERS_URL}?role=Delivery`;
+    const getUserByRoleUrl = `${USERS_URL}?role=DeliveryPerson`;
     const response = await axios.get(
       getUserByRoleUrl,
       {

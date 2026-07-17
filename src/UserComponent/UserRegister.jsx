@@ -22,11 +22,12 @@ const UserRegister = () => {
     role: "",
   });
 
+  // TASK check if we need to remove delivery person from here
   useEffect(() => {
     if (document.URL.indexOf("customer") !== -1) {
       user.role = "Customer";
-    } else if (document.URL.indexOf("delivery") !== -1) {
-      user.role = "Delivery";
+    } else if (document.URL.indexOf("seller/delivery/register") !== -1) {
+      user.role = "DeliveryPerson";
     } else if (document.URL.indexOf("seller") !== -1) {
       user.role = "Seller";
     }
@@ -41,7 +42,7 @@ const UserRegister = () => {
 
     let jwtToken;
 
-    if (user.role === "Delivery") {
+    if (user.role === "DeliveryPerson") {
       user.sellerId = seller.id;
       // jwtToken = sessionStorage.getItem("seller-jwtToken"); // Use bank's JWT token for customer register
     }

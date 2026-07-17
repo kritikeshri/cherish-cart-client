@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ProductCarousel from "./ProductCarousel";
 import { CATEGORIES_URL, PRODUCTS_IMAGE_URL, PRODUCTS_URL } from "../config/constants";
+import { reloadWithTimeout } from "../utils/utils";
 
 const UpdateProductForm = () => {
   const location = useLocation();
@@ -91,9 +92,7 @@ const UpdateProductForm = () => {
               progress: undefined,
             });
 
-            setTimeout(() => {
-              navigate("/seller/product/all");
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           } else if (!res.success) {
             toast.error(res.responseMessage, {
               position: "top-center",
@@ -104,9 +103,7 @@ const UpdateProductForm = () => {
               draggable: true,
               progress: undefined,
             });
-            setTimeout(() => {
-              navigate("/seller/product/all");
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           } else {
             toast.error("It Seems Server is down!!!", {
               position: "top-center",
@@ -117,9 +114,7 @@ const UpdateProductForm = () => {
               draggable: true,
               progress: undefined,
             });
-            setTimeout(() => {
-              navigate("/seller/product/all");
-            }, 2000); // Redirect after 3 seconds
+            reloadWithTimeout(2000);
           }
         });
       })
@@ -134,9 +129,7 @@ const UpdateProductForm = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 1000); // Redirect after 3 seconds
+        reloadWithTimeout(2000);
       });
     e.preventDefault();
   };
@@ -158,9 +151,17 @@ const UpdateProductForm = () => {
     }
 
     const formData = new FormData();
-    formData.append("image1", selectedImage1);
-    formData.append("image2", selectedImage2);
-    formData.append("image3", selectedImage3);
+    if (selectedImage1) {
+      formData.append("image1", selectedImage1);
+    }
+
+    if (selectedImage2) {
+      formData.append("image2", selectedImage2);
+    }
+
+    if (selectedImage3) {
+      formData.append("image3", selectedImage3);
+    }
     formData.append("id", product.id);
 
     axios
@@ -183,9 +184,7 @@ const UpdateProductForm = () => {
             progress: undefined,
           });
 
-          setTimeout(() => {
-            navigate("/seller/product/all");
-          }, 2000); // Redirect after 3 seconds
+          reloadWithTimeout(2000);
         } else if (!response.success) {
           toast.error(response.responseMessage, {
             position: "top-center",
@@ -196,9 +195,7 @@ const UpdateProductForm = () => {
             draggable: true,
             progress: undefined,
           });
-          setTimeout(() => {
-            window.location.reload(true);
-          }, 2000); // Redirect after 3 seconds
+          reloadWithTimeout(2000);
         } else {
           toast.error("It Seems Server is down!!!", {
             position: "top-center",
@@ -209,9 +206,7 @@ const UpdateProductForm = () => {
             draggable: true,
             progress: undefined,
           });
-          setTimeout(() => {
-            window.location.reload(true);
-          }, 2000); // Redirect after 3 seconds
+          reloadWithTimeout(2000);
         }
       })
       .catch((error) => {
@@ -225,9 +220,7 @@ const UpdateProductForm = () => {
           draggable: true,
           progress: undefined,
         });
-        setTimeout(() => {
-          window.location.reload(true);
-        }, 2000); // Redirect after 3 seconds
+        reloadWithTimeout(2000);
       });
   };
 

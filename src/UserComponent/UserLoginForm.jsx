@@ -52,7 +52,7 @@ const UserLoginForm = () => {
                   JSON.stringify(res.user)
                 );
                 sessionStorage.setItem("seller-jwtToken", res.jwtToken);
-              } else if (res.user.role === "Delivery") {
+              } else if (res.user.role === "DeliveryPerson") {
                 sessionStorage.setItem(
                   "active-delivery",
                   JSON.stringify(res.user)
@@ -145,7 +145,7 @@ const UserLoginForm = () => {
                     <option value="Admin"> Admin </option>
                     <option value="Customer"> Customer </option>
                     <option value="Seller"> Seller </option>
-                    <option value="Delivery"> Delivery Person </option>
+                    <option value="DeliveryPerson"> Delivery Person </option>
                   </select>
                 </div>
 

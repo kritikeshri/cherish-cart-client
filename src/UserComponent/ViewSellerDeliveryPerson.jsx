@@ -26,7 +26,7 @@ const ViewSellerDeliveryPerson = () => {
   }, []);
 
   const retrieveAllUser = async () => {
-    const response = await axios.get(GET_DELIVERY_PERSON_BY_SELLER_ID_URL,
+    const response = await axios.get(`${GET_DELIVERY_PERSON_BY_SELLER_ID_URL}=${seller.id}`,
       {
         headers: {
           Authorization: "Bearer " + seller_jwtToken, // Replace with your actual JWT token
