@@ -19,10 +19,11 @@ const AddProductForm = () => {
   };
 
   const reloadWithTimeout = (timeout) => {
-    setTimeout(() => {
-          window.location.reload(true);
-        }, timeout);
-    }
+    // setTimeout(() => {
+    //       window.location.reload(true);
+    //     }, timeout);
+    // TASK - decide on reload
+  }
 
   useEffect(() => {
     const getAllCategories = async () => {
