@@ -86,7 +86,7 @@ const Header = () => {
                 </Link>
               </li>
 
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link
                   to="/contactus"
                   className="nav-link active"

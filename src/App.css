@@ -14,7 +14,6 @@ code {
 
 /* Navbar styling */
 .navbar {
-  background: linear-gradient(90deg, #FF5733, #C70039); /* Orange to Red gradient */
   padding: 1em;
   color: #FFFFFF; /* White text color */
   display: flex;
@@ -24,34 +23,35 @@ code {
 }
 
 .navbar a {
-  color: #FFFFFF; /* White color for links */
+  color: #000000; /* White color for links */
   text-decoration: none;
   padding: 0.5em 1em;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar a:hover {
-  background-color: #900C3F; /* Darker Red on hover */
+  background-color: #a5a1a2; /* Darker Red on hover */
   border-radius: 0.5em;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
 /* Footer styling */
 .footer {
-  background: linear-gradient(90deg, #C70039, #FF5733); /* Red to Orange gradient */
-  color: #FFFFFF;
-  text-align: center;
-  padding: 1.5em 0;
-  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for footer */
+    color: #000000;
+    text-align: center;
+    padding: 1.5em 0;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for footer */
+    width: 100vw;
 }
 
 /* Background and Text Colors */
-.custom-bg {
-  background-color: #FF5733; /* Orange background */
-}
+/* .custom-bg {
+  background-color: #FF5733; /* Orange background 
+} */
 
+/* Deep Red text color */
 .text-color {
-  color: #C70039; /* Deep Red text color */
+  color: #000000; 
 }
 
 .border-color {
@@ -110,6 +110,16 @@ button {
 
 button:hover {
   background-color: #FF5733; /* Lighter Orange on hover */
+}
+
+/* Home page carousal */
+.carousel-control-next{
+  width: 30px;
+  color: #000; 
+}
+
+.carousel-control-next:hover{
+  background-color: rgb(55, 208, 208);
 }
 
 /* Adjustments for mobile responsiveness */

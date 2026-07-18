@@ -34,7 +34,7 @@ const ViewMyCart = () => {
   }, []);
 
   const retrieveCart = async () => {
-    const url = `${CART_ITEMS_URL}?userId=${user.id}`;
+    const url = `${CART_ITEMS_URL}?userId=${user?.id}`;
     const response = await axios.get(url,
       {
         headers: {
@@ -47,7 +47,7 @@ const ViewMyCart = () => {
   };
 
   const deleteCart = (cartId, e) => {
-    const data = { id: cartId, userId: user.id };
+    const data = { id: cartId, userId: user?.id };
     fetch(CART_ITEMS_URL, {
       method: "DELETE",
       headers: {
