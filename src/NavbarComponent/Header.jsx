@@ -55,35 +55,6 @@ const Header = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle text-color"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <b> Category</b>
-                </a>
-                <ul className="dropdown-menu custom-bg text-color">
-                  {categories.map((category) => {
-                    return (
-                      <li key={category?.id}>
-                        <Link
-                          to={`/product/category/${category.id}/${category.name}`}
-                          className="dropdown-item  text-center"
-                        >
-                          <b>{category.name}</b>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </li>
-             
-
-            </ul>
-
             <RoleNav />
           </div>
         </div>

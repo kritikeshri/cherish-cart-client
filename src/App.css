@@ -83,6 +83,42 @@ code {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adjust shadow intensity */
 }
 
+/* product container with categories and peoducts */
+.product-container{
+display:flex;
+}
+
+/* sidebar component */
+.sidebar-component{
+  padding: 0px 12px 0px 0px;
+  margin: 0px 10px 0px 0px;
+}
+
+.sidebar-component h3{
+  color: #6c757d;
+  text-align: center;
+  font-weight: 600;
+}
+
+.single-category{
+  margin: 5px 5px 5px 0;
+  height: 2.3rem;
+  text-align: center;
+  width: 14rem;
+}
+
+.single-category a{
+  padding-top: 5px;
+}
+
+
+.single-category:hover{
+  background-color: #6c757d;
+  color: #FFFFFF;
+  border-radius: 0.5rem;
+}
+
+
 /* Product card with hover effect */
 .product-card {
   background-color: #FFFFFF;
@@ -94,6 +130,10 @@ code {
 .product-card:hover {
   transform: scale(1.05); /* Slightly larger on hover */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* Slightly deeper shadow on hover */
+}
+
+.category-navigator{
+  color: #FF5733;
 }
 
 /* General Button Styling */

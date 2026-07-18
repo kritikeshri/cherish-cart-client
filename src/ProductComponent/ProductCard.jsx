@@ -20,22 +20,15 @@ const ProductCard = (product) => {
                     className="card-img-top img-fluid rounded"
           alt="img"
           style={{
-            maxHeight: "300px",
-            width: "auto",
-            margin: "0 auto",
+            height: "250px",
+            width: "100%",
+            objectFit: "contain",
+            padding: "15px",
+            backgroundColor: "#fff"
           }}
         />
 
         <div className="card-body text-color">
-          <h5>
-            Category:{" "}
-            <CategoryNavigator
-              item={{
-                id: product?.item?.category?.id,
-                name: product?.item?.category?.name,
-              }}
-            />
-          </h5>
           <h5 className="card-title d-flex justify-content-between">
             <div>
               <b>{product?.item?.name}</b>
@@ -44,6 +37,14 @@ const ProductCard = (product) => {
           <p className="card-text">
             <b>{descriptionToShow(product?.item?.description, 50)}</b>
           </p>
+          <h6>
+            <CategoryNavigator
+              item={{
+                id: product?.item?.category?.id,
+                name: product?.item?.category?.name,
+              }}
+            />
+          </h6>
         </div>
         <div className="card-footer">
           <div className="d-flex justify-content-between mt-2">

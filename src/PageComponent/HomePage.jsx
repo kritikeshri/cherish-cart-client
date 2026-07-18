@@ -7,6 +7,7 @@ import Footer from "../NavbarComponent/Footer";
 
 import { CATEGORIES_URL, PRODUCTS_URL } from "../config/constants";
 import { PRODUCTS_SEARCH_URL } from "../config/constants";
+import SidebarComponent from "../ProductComponent/SidebarComponent";
 
 const HomePage = () => {
   const { categoryId } = useParams();
@@ -21,7 +22,7 @@ const HomePage = () => {
 
         if (categoryId == null && searchText === "") {
           // Fetch all products
-          response = await axios.get(PRODUCTS_URL );
+          response = await axios.get(PRODUCTS_URL);
         } else if (searchText) {
           // Fetch products by name
           response = await axios.get(
@@ -78,14 +79,18 @@ const HomePage = () => {
           </div>
         </form>
       </div>
+      <div className="product-container">
+        <SidebarComponent className="col-md-2"/>
 
-      <div className="col-md-12 mt-3 mb-5">
-        <div className="row row-cols-1 row-cols-md-4 g-4">
-          {products.map((product) => {
-            return <ProductCard item={product} key={product.id} />;
-          })}
+        <div className="col-md-10 mt-3 mb-5">
+          <div className="row row-cols-1 row-cols-md-4 g-4">
+            {products.map((product) => {
+              return <ProductCard item={product} key={product.id} />;
+            })}
+          </div>
         </div>
       </div>
+
       <hr />
       <Footer />
     </div>
