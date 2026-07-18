@@ -20,22 +20,15 @@ const ProductCard = (product) => {
                     className="card-img-top img-fluid rounded"
           alt="img"
           style={{
-            maxHeight: "300px",
-            width: "auto",
-            margin: "0 auto",
+            height: "250px",
+            width: "100%",
+            objectFit: "contain",
+            padding: "15px",
+            backgroundColor: "#fff"
           }}
         />
 
         <div className="card-body text-color">
-          <h5>
-            Category:{" "}
-            <CategoryNavigator
-              item={{
-                id: product?.item?.category?.id,
-                name: product?.item?.category?.name,
-              }}
-            />
-          </h5>
           <h5 className="card-title d-flex justify-content-between">
             <div>
               <b>{product?.item?.name}</b>
@@ -44,23 +37,27 @@ const ProductCard = (product) => {
           <p className="card-text">
             <b>{descriptionToShow(product?.item?.description, 50)}</b>
           </p>
+          <h6>
+            <CategoryNavigator
+              item={{
+                id: product?.item?.category?.id,
+                name: product?.item?.category?.name,
+              }}
+            />
+          </h6>
         </div>
         <div className="card-footer">
           <div className="d-flex justify-content-between mt-2">
             <Link
               to={`/product/${product?.item?.id}/category/${product?.item?.category?.id}`}
-              className="btn bg-color custom-bg-text"
+              className="btn bg-color custom-bg-text btn-sm ms-2"
             >
               Add to Cart
             </Link>
 
-            <div className="text-color">
-              <p>
-                <span>
-                  <h4>Price : &#8377;{product?.item?.price}</h4>
-                </span>
-              </p>
-            </div>
+            <span className="fw-bold text-color">
+              <p><b>Price : &#8377;{product?.item?.price}</b></p>
+            </span>
           </div>
         </div>
       </div>

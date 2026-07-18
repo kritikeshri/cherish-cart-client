@@ -27,7 +27,7 @@ const ViewSellerProducts = () => {
   }, []);
 
   const retrieveAllProducts = async () => {
-    const getProductsBySellerIdUrl = `${SELLERS_URL}/${seller.id}/products`;
+    const getProductsBySellerIdUrl = `${SELLERS_URL}/${seller?.id}/products`;
     const response = await axios.get(getProductsBySellerIdUrl);
     console.log(response.data);
     return response.data;

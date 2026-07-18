@@ -21,9 +21,9 @@ const CategoryNavigator = (category) => {
   };
 
   return (
-    <b className="text-color" onClick={categoryNavigator}>
-      <i>{category.item.name}</i>
-    </b>
+    <div className="text-color category-navigator" onClick={categoryNavigator}>
+      {category.item.name}
+    </div>
   );
 };
 
