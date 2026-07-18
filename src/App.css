@@ -58,13 +58,13 @@ code {
 }
 
 .custom-bg-text {
-  color: #FFFFFF; /* White text on colored backgrounds */
+  /* color: #FFFFFF; White text on colored backgrounds */
 }
 
 /* Background color for sections */
 .bg-color {
-  background-color: #C70039; /* Deep Red background */
-  color: #FFFFFF; /* White text on this background */
+  /* background-color: #C70039; Deep Red background */
+  /* color: #FFFFFF; White text on this background */
 }
 
 /* Rounded card with shadow */
@@ -79,7 +79,7 @@ code {
 .form-card {
   padding: 1em;
   border-radius: 1em;
-  background-color: #FF5733; /* Orange background */
+  /* background-color: #FF5733; Orange background */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adjust shadow intensity */
 }
 
