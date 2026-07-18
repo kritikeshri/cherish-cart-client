@@ -6,4 +6,10 @@ export const reloadWithTimeout = (timeout) => {
     console.log("Set Timeout called");
 }
 
-export default { reloadWithTimeout };
+export const redirectToPageWithTimeout = ( href, timeout) => {
+    setTimeout(() => {
+        window.location.href = href;
+    }, timeout);
+};
+
+export default { reloadWithTimeout, redirectToPageWithTimeout };

@@ -63,8 +63,8 @@ code {
 
 /* Background color for sections */
 .bg-color {
-  /* background-color: #C70039; Deep Red background */
-  /* color: #FFFFFF; White text on this background */
+  background-color: #6c757d;
+  color: #FFFFFF;
 }
 
 /* Rounded card with shadow */

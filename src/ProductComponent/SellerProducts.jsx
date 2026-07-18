@@ -19,7 +19,7 @@ const SellerProducts = () => {
 
         if (categoryId == null) {
           // Fetch all products for the seller
-          const getProductsBySellerIdUrl = `${SELLERS_URL}/${seller.id}/products`;
+          const getProductsBySellerIdUrl = `${SELLERS_URL}/${seller?.id}/products`;
           response = await axios.get(getProductsBySellerIdUrl);
         } else {
           // Fetch products by category
