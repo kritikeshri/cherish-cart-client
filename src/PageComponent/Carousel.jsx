@@ -5,7 +5,7 @@ const Carousel = () => {
     <div
       id="carouselExampleCaptions"
       class="carousel slide"
-      data-bs-ride="false"
+      data-bs-ride="carousel"
     >
       <div class="carousel-indicators">
         <button

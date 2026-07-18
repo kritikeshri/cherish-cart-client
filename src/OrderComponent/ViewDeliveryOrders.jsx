@@ -15,13 +15,13 @@ const ViewDeliveryOrders = () => {
 
   const [deliveryUpdateRequest, setDeliveryUpdateRequest] = useState({
     orderId: "",
-    deliveryStatus: "",
+    status: "",
     deliveryTime: "",
     deliveryDate: "",
-    deliveryId: deliveryPerson.id,
+    deliveryId: deliveryPerson?.id,
   });
 
-  const [deliveryStatus, setDeliveryStatus] = useState([]);
+  const [status, setStatus] = useState([]);
   const [deliveryTime, setDeliveryTime] = useState([]);
 
   const handleInput = (e) => {
@@ -56,9 +56,9 @@ const ViewDeliveryOrders = () => {
 
     const getAllDeliveryStatus = async () => {
       let allStatus = await retrieveAllDeliveryStatus();
-
       if (allStatus) {
-        setDeliveryStatus(allStatus);
+        allStatus = allStatus.filter((o)=> o === "On the Way" || o === "Delivered");
+        setStatus(allStatus);
       }
     };
 
@@ -76,7 +76,7 @@ const ViewDeliveryOrders = () => {
   }, [orderId]);
 
   const retrieveAllorders = async () => {
-    const getOrdersByDeliveryPersonIdUrl = `${DELIVERY_PERSON_URL}/${deliveryPerson.id}/orders`;
+    const getOrdersByDeliveryPersonIdUrl = `${DELIVERY_PERSON_URL}/${deliveryPerson?.id}/orders`;
     const response = await axios.get(
       getOrdersByDeliveryPersonIdUrl,
       {
@@ -388,6 +388,7 @@ const ViewDeliveryOrders = () => {
                   name="deliveryDate"
                   onChange={handleInput}
                   value={deliveryUpdateRequest.deliveryDate}
+                  min={new Date().toISOString().split("T")[0]}
                 />
               </div>
 
@@ -415,13 +416,13 @@ const ViewDeliveryOrders = () => {
                 </label>
 
                 <select
-                  name="deliveryStatus"
+                  name="status"
                   onChange={handleInput}
                   className="form-control"
                 >
                   <option value="">Select Delivery Status</option>
 
-                  {deliveryStatus.map((status) => {
+                  {status.map((status) => {
                     return <option value={status}>{status}</option>;
                   })}
                 </select>
