@@ -51,7 +51,6 @@ const HomePage = () => {
   return (
     <div className="container-fluid mb-2">
       <Carousel />
-
       <div className="d-flex aligns-items-center justify-content-center mt-5">
         <form class="row g-3">
           <div class="col-auto">
