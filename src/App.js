@@ -4,7 +4,6 @@ import AdminRegisterForm from "./UserComponent/AdminRegisterForm";
 import UserLoginForm from "./UserComponent/UserLoginForm";
 import UserRegister from "./UserComponent/UserRegister";
 import AboutUs from "./PageComponent/AboutUs";
-import ContactUs from "./PageComponent/ContactUs";
 import HomePage from "./PageComponent/HomePage";
 import AddCategoryForm from "./CategoryComponent/AddCategoryForm";
 import AddProductForm from "./ProductComponent/AddProductForm";
@@ -41,7 +40,6 @@ function App() {
         <Route path="/user/seller/register" element={<UserRegister />} />
         <Route path="/seller/delivery/register" element={<UserRegister />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/contactus" element={<ContactUs />} />
         <Route
           path="/product/category/:categoryId/:categoryName"
           element={<HomePage />}

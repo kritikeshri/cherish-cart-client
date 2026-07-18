@@ -80,21 +80,8 @@ const Header = () => {
                   })}
                 </ul>
               </li>
-              <li className="nav-item">
-                <Link to="/aboutus" className="nav-link active" aria-current="page">
-                  <b className="text-color">About Us</b>
-                </Link>
-              </li>
+             
 
-              <li className="nav-item">
-                <Link
-                  to="/contactus"
-                  className="nav-link active"
-                  aria-current="page"
-                >
-                  <b className="text-color">Contact Us</b>
-                </Link>
-              </li>
             </ul>
 
             <RoleNav />
