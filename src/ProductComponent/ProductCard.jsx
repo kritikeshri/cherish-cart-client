@@ -50,18 +50,14 @@ const ProductCard = (product) => {
           <div className="d-flex justify-content-between mt-2">
             <Link
               to={`/product/${product?.item?.id}/category/${product?.item?.category?.id}`}
-              className="btn bg-color custom-bg-text"
+              className="btn bg-color custom-bg-text btn-sm ms-2"
             >
               Add to Cart
             </Link>
 
-            <div className="text-color">
-              <p>
-                <span>
-                  <h4>Price : &#8377;{product?.item?.price}</h4>
-                </span>
-              </p>
-            </div>
+            <span className="fw-bold text-color">
+              <p><b>Price : &#8377;{product?.item?.price}</b></p>
+            </span>
           </div>
         </div>
       </div>
