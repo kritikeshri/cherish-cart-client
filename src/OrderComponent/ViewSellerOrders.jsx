@@ -52,7 +52,7 @@ const ViewSellerOrders = () => {
   }, [orderId]);
 
   const retrieveAllorders = async () => {
-    const getOrdersBySellerIdUrl = `${SELLERS_URL}/${seller.id}/orders`;
+    const getOrdersBySellerIdUrl = `${SELLERS_URL}/${seller?.id}/orders`;
     const response = await axios.get(
       getOrdersBySellerIdUrl,
       {
