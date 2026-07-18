@@ -112,13 +112,13 @@ button:hover {
 }
 
 /* Home page carousal */
-.carousel-control-next{
+.carousel-control-next, .carousel-control-prev{
   width: 30px;
-  color: #000; 
+  color: #000;
 }
 
-.carousel-control-next:hover{
-  background-color: rgb(55, 208, 208);
+.carousel-control-next:hover,  .carousel-control-prev:hover{
+  background-color: rgb(116, 128, 128);
 }
 
 /* Adjustments for mobile responsiveness */
