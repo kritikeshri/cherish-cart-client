@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { navigateTo } from "../utils/navigation";
 
 import { useNavigate } from "react-router-dom";
 import { USERS_LOGIN_URL } from "../config/constants";
@@ -41,28 +42,28 @@ const UserLoginForm = () => {
                   JSON.stringify(res.user)
                 );
                 sessionStorage.setItem("admin-jwtToken", res.jwtToken);
-                redirectToPageWithTimeout("/home", 1000);
+                navigateTo("/home", 1000);
               } else if (res.user.role === "Customer") {
                 sessionStorage.setItem(
                   "active-customer",
                   JSON.stringify(res.user)
                 );
                 sessionStorage.setItem("customer-jwtToken", res.jwtToken);
-                redirectToPageWithTimeout("/home", 1000);
+                navigateTo("/home", 1000);
               } else if (res.user.role === "Seller") {
                 sessionStorage.setItem(
                   "active-seller",
                   JSON.stringify(res.user)
                 );
                 sessionStorage.setItem("seller-jwtToken", res.jwtToken);
-                redirectToPageWithTimeout("/seller/order/all", 1000);
+                navigateTo("/seller/order/all", 1000);
               } else if (res.user.role === "DeliveryPerson") {
                 sessionStorage.setItem(
                   "active-delivery",
                   JSON.stringify(res.user)
                 );
                 sessionStorage.setItem("delivery-jwtToken", res.jwtToken);
-                redirectToPageWithTimeout("/delivery-person/order/all", 1000);
+                navigateTo("/delivery-person/order/all", 1000);
               }
             }
 

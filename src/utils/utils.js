@@ -8,7 +8,7 @@ export const reloadWithTimeout = (timeout) => {
 
 export const redirectToPageWithTimeout = ( href, timeout) => {
     setTimeout(() => {
-        window.location.href = href;
+        window.location.assign(`/cherish-cart-client${href}`);
     }, timeout);
 };
 
