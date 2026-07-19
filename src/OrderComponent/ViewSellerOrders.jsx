@@ -4,7 +4,7 @@ import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import { reloadWithTimeout } from "../utils/utils";
-import { PRODUCTS_IMAGE_URL, SELLERS_URL, GET_DELIVERY_PERSON_BY_SELLER_ID_URL, 
+import { SELLERS_URL, GET_DELIVERY_PERSON_BY_SELLER_ID_URL, 
   ORDERS_URL, ORDER_ASSIGN_URL } from "../config/constants";  
 
 const ViewSellerOrders = () => {
@@ -249,9 +249,7 @@ const ViewSellerOrders = () => {
                       </td>
                       <td>
                         <img
-                          src={
-                            `${PRODUCTS_IMAGE_URL}/${order.product.image1}`
-                          }
+                          src={order?.product?.image1}
                           class="img-fluid"
                           alt="product_pic"
                           style={{

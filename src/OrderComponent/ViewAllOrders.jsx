@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
-import { PRODUCTS_IMAGE_URL } from "../config/constants";
 import { ORDERS_URL } from "../config/constants";
 
 const ViewAllOrders = () => {
@@ -140,9 +139,7 @@ const ViewAllOrders = () => {
                       </td>
                       <td>
                         <img
-                          src={
-                            `${PRODUCTS_IMAGE_URL}/${order.product.image1}`
-                          }
+                          src={order?.product?.image1}
                           class="img-fluid"
                           alt="product_pic"
                           style={{

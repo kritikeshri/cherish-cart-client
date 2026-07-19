@@ -4,7 +4,7 @@ import axios from "axios";
 
 import { useParams } from "react-router-dom";
 import star from "../images/star.png";
-import { PRODUCTS_IMAGE_URL, PRODUCTS_URL } from "../config/constants";
+import { PRODUCTS_URL } from "../config/constants";
 
 const GetProductReviews = (hotel) => {
   const [reviews, setReviews] = useState([]);

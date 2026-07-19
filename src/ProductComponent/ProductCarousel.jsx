@@ -1,6 +1,4 @@
 
-import { PRODUCTS_IMAGE_URL } from "../config/constants";
-
 const ProductCarousel = (product) => {
   return (
     <div
@@ -33,7 +31,7 @@ const ProductCarousel = (product) => {
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img
-            src={`${PRODUCTS_IMAGE_URL}/${product?.item?.image1}`}
+            src={product.item.image1}
             className="d-block card-img-top img-fluid"
             alt="..."
             style={{
@@ -45,7 +43,7 @@ const ProductCarousel = (product) => {
         </div>
         <div className="carousel-item">
           <img
-            src={`${PRODUCTS_IMAGE_URL}/${product?.item?.image2}`}
+            src={product.item.image2}
             className="d-block card-img-top img-fluid"
             alt="..."
             style={{
@@ -57,7 +55,7 @@ const ProductCarousel = (product) => {
         </div>
         <div className="carousel-item">
           <img
-            src={`${PRODUCTS_IMAGE_URL}/${product?.item?.image3}`}
+            src={product.item.image3}
             className="d-block card-img-top img-fluid"
             alt="..."
             style={{

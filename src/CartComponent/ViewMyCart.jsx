@@ -4,7 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { reloadWithTimeout } from "../utils/utils";
-import { CART_ITEMS_URL, PRODUCTS_IMAGE_URL, USERS_URL } from "../config/constants";
+import { CART_ITEMS_URL, USERS_URL } from "../config/constants";
 
 const ViewMyCart = () => {
   let user = JSON.parse(sessionStorage.getItem("active-customer"));
@@ -283,9 +283,7 @@ const ViewMyCart = () => {
                     <tr>
                       <td>
                         <img
-                          src={
-                            `${PRODUCTS_IMAGE_URL}/${cart.product.image1}`
-                          }
+                          src={cart?.product?.image1}
                           class="img-fluid"
                           alt="product_pic"
                           style={{

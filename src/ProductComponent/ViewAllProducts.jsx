@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import React from "react";
-import { PRODUCTS_URL, PRODUCTS_IMAGE_URL } from "../config/constants";
+import { PRODUCTS_URL } from "../config/constants";
 
 const ViewAllProducts = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -66,9 +66,7 @@ const ViewAllProducts = () => {
                     <tr>
                       <td>
                         <img
-                          src={
-                            `${PRODUCTS_IMAGE_URL}/${product.image1}`
-                          }
+                          src={product?.image1}
                           class="img-fluid"
                           alt="product_pic"
                           style={{

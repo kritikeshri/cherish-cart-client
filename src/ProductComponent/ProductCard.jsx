@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import CategoryNavigator from "../CategoryComponent/CategoryNavigator";
-import { PRODUCTS_IMAGE_URL } from "../config/constants";
 
 const ProductCard = (product) => {
   const descriptionToShow = (description, maxLength) => {
@@ -16,7 +15,7 @@ const ProductCard = (product) => {
     <div className="col">
       <div className="card product-card rounded-card custom-bg h-100 shadow-lg">
         <img
-          src={`${PRODUCTS_IMAGE_URL}/${product.item.image1}`}
+          src={product?.item?.image1}
                     className="card-img-top img-fluid rounded"
           alt="img"
           style={{

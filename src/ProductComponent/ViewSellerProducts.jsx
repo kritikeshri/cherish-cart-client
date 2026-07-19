@@ -4,7 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { reloadWithTimeout } from "../utils/utils";
-import { PRODUCTS_URL, PRODUCTS_IMAGE_URL, SELLERS_URL } from "../config/constants";
+import { PRODUCTS_URL, SELLERS_URL } from "../config/constants";
 
 const ViewSellerProducts = () => {
   const seller = JSON.parse(sessionStorage.getItem("active-seller"));
@@ -139,9 +139,7 @@ const ViewSellerProducts = () => {
                     <tr>
                       <td>
                         <img
-                          src={
-                            `${PRODUCTS_IMAGE_URL}/${product.image1}`
-                          }
+                          src={product?.image1}
                           class="img-fluid"
                           alt="product_pic"
                           style={{
