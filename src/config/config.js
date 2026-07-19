@@ -1,5 +1,5 @@
 const config = {
-  apiBaseUrl: process.env.REACT_APP_BASE_URL
+  apiBaseUrl: process.env.CHRISH_CART_SERVER_URL
 };
 
 export default config;
