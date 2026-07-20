@@ -1,18 +1,19 @@
 {
   "files": {
     "main.css": "/cherish-cart-client/static/css/main.691d1f7d.css",
-    "main.js": "/cherish-cart-client/static/js/main.d9ed9f8b.js",
+    "main.js": "/cherish-cart-client/static/js/main.d260187c.js",
     "static/media/carousel2.png": "/cherish-cart-client/static/media/carousel2.a464ca87a2c5cfb7a3b3.png",
     "static/media/carousel1.jpg": "/cherish-cart-client/static/media/carousel1.9a2a2794ddbdaa854c8b.jpg",
     "static/media/carousel3.jpg": "/cherish-cart-client/static/media/carousel3.06d967863235ac782826.jpg",
+    "static/media/placeholder.jpg": "/cherish-cart-client/static/media/placeholder.568c86214a2389b30b80.jpg",
     "static/media/star.png": "/cherish-cart-client/static/media/star.8199a143596837aeb5b1.png",
     "static/media/e_logo.png": "/cherish-cart-client/static/media/e_logo.ff18b0bf2637ebf2b444.png",
     "index.html": "/cherish-cart-client/index.html",
     "main.691d1f7d.css.map": "/cherish-cart-client/static/css/main.691d1f7d.css.map",
-    "main.d9ed9f8b.js.map": "/cherish-cart-client/static/js/main.d9ed9f8b.js.map"
+    "main.d260187c.js.map": "/cherish-cart-client/static/js/main.d260187c.js.map"
   },
   "entrypoints": [
     "static/css/main.691d1f7d.css",
-    "static/js/main.d9ed9f8b.js"
+    "static/js/main.d260187c.js"
   ]
 }
