@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { reloadWithTimeout } from "../utils/utils";
 import { CART_ITEMS_URL, USERS_URL } from "../config/constants";
+import { imagePath } from "../utils/utils";
 
 const ViewMyCart = () => {
   let user = JSON.parse(sessionStorage.getItem("active-customer"));
@@ -283,7 +284,7 @@ const ViewMyCart = () => {
                     <tr>
                       <td>
                         <img
-                          src={cart?.product?.image1}
+                          src={imagePath(cart?.product?.image1)}
                           class="img-fluid"
                           alt="product_pic"
                           style={{

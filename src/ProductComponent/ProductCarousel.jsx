@@ -1,4 +1,5 @@
 
+import { imagePath } from "../utils/utils";
 const ProductCarousel = (product) => {
   return (
     <div
@@ -31,7 +32,7 @@ const ProductCarousel = (product) => {
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img
-            src={product.item.image1}
+            src={imagePath(product.item.image1)}
             className="d-block card-img-top img-fluid"
             alt="..."
             style={{
@@ -43,7 +44,7 @@ const ProductCarousel = (product) => {
         </div>
         <div className="carousel-item">
           <img
-            src={product.item.image2}
+            src={imagePath(product.item.image2)}
             className="d-block card-img-top img-fluid"
             alt="..."
             style={{
@@ -55,7 +56,7 @@ const ProductCarousel = (product) => {
         </div>
         <div className="carousel-item">
           <img
-            src={product.item.image3}
+            src={imagePath(product.item.image3)}
             className="d-block card-img-top img-fluid"
             alt="..."
             style={{

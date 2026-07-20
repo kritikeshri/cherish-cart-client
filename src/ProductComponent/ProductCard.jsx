@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import CategoryNavigator from "../CategoryComponent/CategoryNavigator";
+import {imagePath} from "../utils/utils"
 
 const ProductCard = (product) => {
   const descriptionToShow = (description, maxLength) => {
@@ -15,7 +16,7 @@ const ProductCard = (product) => {
     <div className="col">
       <div className="card product-card rounded-card custom-bg h-100 shadow-lg">
         <img
-          src={product?.item?.image1}
+          src={imagePath(product?.item?.image1) }
                     className="card-img-top img-fluid rounded"
           alt="img"
           style={{

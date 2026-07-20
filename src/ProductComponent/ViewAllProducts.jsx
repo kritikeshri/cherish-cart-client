@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import {imagePath} from "../utils/utils"
 import React from "react";
 import { PRODUCTS_URL } from "../config/constants";
 
@@ -66,7 +66,7 @@ const ViewAllProducts = () => {
                     <tr>
                       <td>
                         <img
-                          src={product?.image1}
+                          src={imagePath(product?.image1)}
                           class="img-fluid"
                           alt="product_pic"
                           style={{

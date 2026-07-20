@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
-
+import { imagePath } from "../utils/utils";
 import { USERS_URL } from "../config/constants";
 
 const ViewMyOrders = () => {
@@ -97,7 +97,7 @@ const ViewMyOrders = () => {
                       </td>
                       <td>
                         <img
-                          src={order?.product?.image1}
+                          src={imagePath(order?.product?.image1)}
                           class="img-fluid"
                           alt="product_pic"
                           style={{

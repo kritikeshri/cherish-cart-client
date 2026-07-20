@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
 import { ORDERS_URL } from "../config/constants";
+import { imagePath } from "../utils/utils";
+
 
 const ViewAllOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -139,7 +141,7 @@ const ViewAllOrders = () => {
                       </td>
                       <td>
                         <img
-                          src={order?.product?.image1}
+                          src={imagePath(order?.product?.image1)}
                           class="img-fluid"
                           alt="product_pic"
                           style={{

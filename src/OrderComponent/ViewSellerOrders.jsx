@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { reloadWithTimeout } from "../utils/utils";
 import { SELLERS_URL, GET_DELIVERY_PERSON_BY_SELLER_ID_URL, 
   ORDERS_URL, ORDER_ASSIGN_URL } from "../config/constants";  
+import { imagePath } from "../utils/utils";
 
 const ViewSellerOrders = () => {
   const seller = JSON.parse(sessionStorage.getItem("active-seller"));
@@ -249,7 +250,7 @@ const ViewSellerOrders = () => {
                       </td>
                       <td>
                         <img
-                          src={order?.product?.image1}
+                          src={imagePath(order?.product?.image1)}
                           class="img-fluid"
                           alt="product_pic"
                           style={{

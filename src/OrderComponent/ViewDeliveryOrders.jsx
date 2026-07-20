@@ -6,6 +6,7 @@ import { reloadWithTimeout } from "../utils/utils";
 import { ToastContainer, toast } from "react-toastify";
 import { DELIVERY_PERSON_URL, GET_ALL_DELIVER_STATUSES_URL,
   GET_ALL_DELIVER_TIMES_URL, ORDERS_URL, ORDER_STATUS_URL} from "../config/constants";
+import {imagePath} from "../utils/utils";
 
 const ViewDeliveryOrders = () => {
   const deliveryPerson = JSON.parse(sessionStorage.getItem("active-delivery"));
@@ -264,8 +265,8 @@ const ViewDeliveryOrders = () => {
                         <b>{order.orderId}</b>
                       </td>
                       <td>
-                        <img
-                          src={order?.product?.image1}
+                        <img 
+                          src={imagePath(order?.product?.image1)}
                           class="img-fluid"
                           alt="product_pic"
                           style={{

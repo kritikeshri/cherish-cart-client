@@ -3,6 +3,7 @@ import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { imagePath } from "../utils/utils";
 import { reloadWithTimeout } from "../utils/utils";
 import { PRODUCTS_URL, SELLERS_URL } from "../config/constants";
 
@@ -139,7 +140,7 @@ const ViewSellerProducts = () => {
                     <tr>
                       <td>
                         <img
-                          src={product?.image1}
+                          src={imagePath(product?.image1)}
                           class="img-fluid"
                           alt="product_pic"
                           style={{
